@@ -1,0 +1,15 @@
+[Unit]
+Description=Terabox Telegram Bot
+After=network.target mongodb.service
+
+[Service]
+Type=simple
+User=your_username
+WorkingDirectory=/path/to/Teraboxdl
+Environment="PATH=/path/to/Teraboxdl/venv/bin"
+ExecStart=/path/to/Teraboxdl/venv/bin/python bot.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
